@@ -6,9 +6,9 @@ Usage:
 
 Unzip eigen.zip in the folder
 
-compile the code(makefile, type make in bash)
+compile the code(makefile, type "make" in bash)
 
-run ./1d.
+run "./1d".
 
 Parameters can be adjusted in the code.(search comments   "  // adjust here ")
 
