@@ -380,11 +380,11 @@ public:
 
 
 std::vector<std::complex<double> > run(){
-
+     // adjust here, neural network parameters 
     Wavefunction1d Wave(10,1);
     //std::cout<<Wave.psi(1)<<std::endl;
     
-    
+    //third parameter not used
     HamiltonianStark H(1,1,0);
     
     //random number
@@ -402,11 +402,11 @@ std::vector<std::complex<double> > run(){
     int s=Wave.getn();
     int sm=Wave.getm();
     int st=sm*s+2*s;
-
+     // adjust here, nmax
     int nmax=20;
 
     
-    
+         // adjust here, number of sweeps 
     int step=100;
     
     std::vector<std::complex<double> > resultenergy(100);
@@ -515,7 +515,7 @@ std::vector<std::complex<double> > run(){
             else
             {statem[0]=state[0]+1; ttt-=std::sqrt((statem[0])/2)*Wave.psi(statem).real()/ Wave.psi(state).real();
             statem[0]=state[0]-1; ttt-=std::sqrt((state[0])/2)*Wave.psi(statem).real()/ Wave.psi(state).real();}
-            
+              // adjust here, parameters    
             //qE factor
             E+=ttt*1.0;
             energy+=E;
@@ -558,7 +558,7 @@ std::vector<std::complex<double> > run(){
 
         Matrix<std::complex<double>, Dynamic, 1> dd;
         dd.resize(st,1);
-        
+     // adjust here, learning rates   
         dd = -0.1*pseudoInverse(S)*F;
 
         std::vector<std::complex<double> > da_;
