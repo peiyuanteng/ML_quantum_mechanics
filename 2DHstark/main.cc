@@ -387,13 +387,16 @@ public:
 
 
 int main(int argc, char *argv[]){
-
+     // adjust here, neural networks
     Wavefunctionradial Wave(10,2);
     std::ofstream myfile;
     myfile.open ("data.txt");
-    
+       // adjust here, lambda1 2 parameters    
     double lambda1=4.0;
     double lambda2=2.0;
+    
+    
+    
     double lambda=0.5;
     HamiltonianInteract H(1,1,lambda);
     
@@ -412,11 +415,8 @@ int main(int argc, char *argv[]){
     int s=Wave.getn();
     int sm=Wave.getm();
     int st=sm*s+2*s;
-
+     // adjust here, nmax and step  
     int nmax=40;
-
-    
-    
     int step=200;
     
     
@@ -684,7 +684,7 @@ int main(int argc, char *argv[]){
 
         Matrix<std::complex<double>, Dynamic, 1> dd;
         dd.resize(st,1);
-
+     // adjust here, learning rates  
         dd = -0.2*pseudoInverse(S)*F;
 
         std::vector<std::complex<double> > da_;
